@@ -1,39 +1,61 @@
 /* Basic Style */
-body {
+.body {
     background-color: #f8f8f8;
     color: #333;
     font-family: Lato, sans-serif;
 }
-.aaa {
+/* .aaa { */
+    
+    .header {
     width: 500px;
     margin: 0 auto;
     display: block;
     text-align: right;
 }
-.aaa img {
+/* .aaa img { */
+.header__matrix {
     width: 100%;
 }
-.aaa .more_inf {
+/* .aaa .more_inf { */
+.header__info-link {
     font-family: fantasy, cursive;
 }
 
 @media (max-width:768px) {
-.aaa { text-align: center;
+.header { text-align: center;
 }
 }
-.centered-main-page-element {
-    display: block;
-    width: 500px;
-    margin: 0 auto 0;
+
+/* .centered-main-page-element { */
+    .main{
+     display: block;
+     width: 500px;
+     margin: 0 auto 0;
+    }
+
+    .newTaskBlock__header {
+        /* display: block; */
+        margin: 0 0 20px;
+    }
+
+    .newTaskBlock__taskRow {
+        display: flex;
+    }
+
+
+    /* .task { */
+.newTaskBlock__taskRow__area {
+    width: 56% ;
+    display: inline-block ;
+    flex-grow: 1 ;
+    width: 318px ;
 }
-.task {
-    width: 56%;
-    display: inline-block;
-    flex-grow: 1
-}
-.task-row-wrapper {
-    display: flex;
-}
+/* 
+input#new-task {
+    width: 318px;
+} */
+
+
 ul {
     margin:0;
     padding: 0px;
@@ -41,9 +63,12 @@ ul {
 li, h3 {
     list-style:none;
 }
+
 input,button{
     outline:none;
 }
+
+.newTaskBlock__taskRow__button,
 button {
     background: none;
     border: 0px;
@@ -88,14 +113,9 @@ input[type="text"]:focus {
     display: block;
     margin: 0 0 20px;
 } */
-.new-task-block__header {
-    /* display: block; */
-    margin: 0 0 20px;
-}
 
-input#new-task {
-    width: 318px;
-}
+
+
 
 /* Task list */
 li {
@@ -123,18 +143,21 @@ li > label {
 li >    input[type="text"] {
     width: 226px
 }
+
+.delBtn__img,
 button.delete img {
     height: 2em;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
 }
+.delBtn__img,
 button.delete img:hover {
     transform: rotateZ(0);
 }
 
 /* Completed */
 ul#completed-tasks label {
-    text-decoration: line-through
+    text-decoration: line-through ;
     color: #888;
 }
 

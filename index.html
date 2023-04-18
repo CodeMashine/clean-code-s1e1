@@ -8,40 +8,44 @@
     <title>Todo App</title>
 </head>
 
-<body>
+<body class = "body">
     
-    <header class="aaa header">
-        <img src="./eisenhower-matrix.jpg" alt="eisenhower matrix">
-        <a class="more_inf" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+    <!-- <header class="aaa header"> -->
+    <header class="header">
+        <img class="header__matrix" src="./eisenhower-matrix.jpg" alt="eisenhower matrix">
+        <a class="header__info-link" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
     </header>
 
-    <main class="centered-main-page-element main">
+    <!-- <main class="centered-main-page-element main"> -->
+    <main class="main">
 
-        <section id="topSectionForAddingElementToList new-task-block">
+        <section id="newTaskBlock">
             
-        <h3 class = "new-task-block__header">
+        <h3 class = "newTaskBlock__header">
             <label for="new-task">Add Item</label>
         </h3>
-            <div class="task-row-wrapper ">
-                <input id="new-task"class="task" type="text">
-                <button>Add</button>
+            <div class="newTaskBlock__taskRow ">
+                <input id="new-task"class="newTaskBlock__taskRow__area" type="text">
+                <button class="newTaskBlock__taskRow__button">Add</button>
             </div>
         </section>
     
-        <section>
-            <h3>Todo</h3>
+        <section class ="incTasksBlock">
+            <h3 class="incTasksBlock__header">Todo</h3>
     
-            <ul id="incompleteTasks">
-                <li><input type="checkbox">
-                    <label class="task">Pay Bills</label>
-                    <input type="text" class="task">
-                    <button class="edit">Edit</button>
-                    <button class="delete">
-                        <img src="./remove.svg" alt="remove">
+            <!-- <ul id="incompleteTasks"> -->
+            <ul class="incTasksBlock__list">
+                <li class = "incTasksBlock__list__item">
+                    <input type="checkbox">
+                    <label class="incTasksBlock__list__item__desc">Pay Bills</label>
+                    <input type="text" class="incTasksBlock__list__item__desc">
+                    <button class="incTasksBlock__list__item__editBtn">Edit</button>
+                    <button class="incTasksBlock__list__item__delBtn delBtn">
+                        <img class="delBtn__img" src="./remove.svg" alt="remove">
                     </button>
                 </li>
                 
-                <li class="editMode">
+                <li class="incTasksBlock__list__item editMode">
                     <input type="checkbox">
                     <label class="task">Go Shopping</label>
                     <input type="text" value="Go Shopping" class="task">
