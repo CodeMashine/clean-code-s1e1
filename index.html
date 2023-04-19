@@ -10,10 +10,10 @@
 
 <body class = "body">
     
-    <header class="header">
-        <img class="header__matrix" src="./eisenhower-matrix.jpg" alt="eisenhower matrix">
-        <a class="header__info-link" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
-    </header>
+  <header class="header">
+    <img class="header__matrix" src="./eisenhower-matrix.jpg" alt="eisenhower matrix">
+    <a class="header__info-link" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+  </header>
 
   <main class="main">  
     <section id="newTaskBlock">
@@ -51,11 +51,12 @@
       </ul>
     </section>
   
-    <section class="tasksBlock__list">
+    <section class="tasksBlock">
       <h3 class="tasksBlock__header">Completed</h3>
-      <ul id="completed-tasks" class="tasksBlock__list__item editMode">
-        <li >
-          <input type="checkbox" checked><label class="task">See the Doctor</label>
+      <ul id="completed-tasks" class="tasksBlock__list tasksBlock__list_done">
+        <li class="tasksBlock__list__item" >
+          <input type="checkbox" checked>
+          <label class="tasksBlock__list__item__desc">See the Doctor</label>
           <input class="tasksBlock__list__item__area" type="text" class="task">
           <button class="tasksBlock__list__item__editBtn">Edit</button>
           <button class="tasksBlock__list__item__delBtn">
