@@ -39,10 +39,10 @@ var createNewTaskElement=function(taskString){
     editInput.className = "tasksBlock__list__item__area" ;
     //button.edit
     var editButton=document.createElement("button");//edit button
-    editButton.className = "tasksBlock__list__item__editBtn editBtn"
+    editButton.className = "tasksBlock__list__item__editBtn"
     //button.delete
     var deleteButton=document.createElement("button");//delete button
-    deleteButton.className = "tasksBlock__list__item__delBtn delBtn" ;
+    deleteButton.className = "tasksBlock__list__item__delBtn" ;
     var deleteButtonImg=document.createElement("img");//delete button image
     // deleteButtonImg = "delBtn__img" ;
 
@@ -103,7 +103,7 @@ var editTask=function(){
     console.log(listItem);
 
 
-    var editInput=listItem.querySelector('.area');
+    var editInput=listItem.querySelector('.tasksBlock__list__item__area');
     var label=listItem.querySelector(".tasksBlock__list__item__desc");
     var editBtn=listItem.querySelector(".tasksBlock__list__item__editBtn");
     var containsClass=listItem.classList.contains("editMode");

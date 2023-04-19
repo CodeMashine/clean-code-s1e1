@@ -145,12 +145,15 @@ li >    input[type="text"] {
 }
 
 .delBtn__img,
+/* .tasksBlock__list__item__delBtn, */
 button.delete img {
     height: 2em;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
 }
-.delBtn__img,
+
+.delBtn__img:hover,
+/* .tasksBlock__list__item__delBtn , */
 button.delete img:hover {
     transform: rotateZ(0);
 }
