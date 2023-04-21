@@ -100,23 +100,6 @@ input,button{
   color: #3a3a3a;
 }
 
-.tasksBlock__list__item__area {
-  margin: 0;
-  font-size: 18px;
-  line-height: 18px;
-  height: 21px;
-  padding: 0 9px;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 6px;
-  font-family: Lato, sans-serif;
-  color: #888;
-}
-
-.tasksBlock__list__item__area{
-  color: #333;
-}
-
 .tasksBlock__list__item {
   overflow: hidden;
   padding: 20px 0;
@@ -131,6 +114,20 @@ input,button{
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
+}
+
+.tasksBlock__list__item__area {
+  display: none;
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 21px;
+  padding: 0 9px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #333;
 }
 
 .delBtn__img {
@@ -150,9 +147,6 @@ input,button{
 }
 
 /* Edit Task */
-.tasksBlock__list__item__area {
-  display:none;
-}
 
 .editMode > .tasksBlock__list__item__area {
   display: inline-block;

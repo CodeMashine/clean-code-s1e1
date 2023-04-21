@@ -1,36 +1,31 @@
-//Document is the DOM can be accessed in the console with document.window.
-// Tree is from the top, html, body, p etc.
 
-//Problem: User interaction does not provide the correct results.
-//Solution: Add interactivity so the user can manage daily tasks.
-//Break things down into smaller steps and take each step at a time.
-
-
-// Event handling, user interaction is what starts the code execution.
-
-console.log(`наскольrо могу судить все пункы выполнены.
+console.log(`насколько могу судить все пункы выполнены.
 Во всех фаилах : 
   -откоректированы отступы.
   -применена БЭМ мотация.
+  -удалены коментарии показавшиеся лишними.
+  -все имена и классы в нижнем регистре.
 
-В фаилк HTML :
+В фаиле HTML :
   -добавлен DOCTYPE.
   -применены синтаксические теги.
+  -добавлены alt для img ,
  
-В css :
+В фаиле css :
   -селекторы по тегу применены только для сброса ,
+  -пробел между именем своиста добавлен ,
 
-В js :
+В фаиле js :
   -переход с var на let ,
   -сделал addTask чистой ,
  `)
 
 
 
-let taskInput = document.querySelector(".newTaskBlock__taskRow__area");//Add a new task.
-let addButton = document.querySelector(".newTaskBlock__taskRow__button");//first button
-let incompleteTaskHolder = document.querySelector(".tasksBlock__list");//ul of #incompleteTasks
-let completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
+let taskInput = document.querySelector(".newTaskBlock__taskRow__area");
+let addButton = document.querySelector(".newTaskBlock__taskRow__button");
+let incompleteTaskHolder = document.querySelector(".tasksBlock__list");
+let completedTasksHolder = document.getElementById("completed-tasks");
 
 //New task list item
 let createNewTaskElement = function( taskString ) {
@@ -68,8 +63,6 @@ let createNewTaskElement = function( taskString ) {
   
   return listItem;
 }
-
-
 
 let bindTaskEvents = function( taskListItem , checkBoxEventHandler ) {
 
@@ -111,6 +104,7 @@ let editTask = function() {
     editInput.value = label.innerText;
     editBtn.innerText = "Save";
   }  
+
   listItem.classList.toggle("editMode");
 };
 
@@ -145,8 +139,6 @@ let incTask = incompleteTaskHolder.children ;
 for (let i = 0; i < incTask.length ; i++){
   bindTaskEvents( incTask[i] , taskCompleted );
 }
-
-
 
 let compTask = completedTasksHolder.children ; 
 
