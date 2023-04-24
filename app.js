@@ -24,8 +24,8 @@ console.log(`насколько могу судить все пункы выпо
 
 let taskInput = document.querySelector(".newTaskBlock__taskRow__area");
 let addButton = document.querySelector(".newTaskBlock__taskRow__button");
-let incompleteTaskHolder = document.querySelector(".tasksBlock__list");
-let completedTasksHolder = document.getElementById("completed-tasks");
+let incompleteTasks = document.querySelector(".tasksBlock__list");
+let completedTasks = document.getElementById("completed-tasks");
 
 //New task list item
 let createNewTaskElement = function( taskString ) {
@@ -34,6 +34,7 @@ let createNewTaskElement = function( taskString ) {
   listItem.className = "tasksBlock__list__item" ;
  
   let checkBox=document.createElement("input");
+  checkBox.className = "tasksBlock__list__item__checkbox" ;
   checkBox.type = "checkbox";
   
   let label=document.createElement("label");
@@ -57,18 +58,18 @@ let createNewTaskElement = function( taskString ) {
   deleteButtonImg.src='./remove.svg';
   deleteButtonImg.className='delBtn__img';
   
-  deleteButton.append(deleteButtonImg);  
+  deleteButton.append( deleteButtonImg );  
 
-  listItem.append(checkBox , label , editInput , editButton , deleteButton );
+  listItem.append( checkBox , label , editInput , editButton , deleteButton );
   
   return listItem;
 }
 
 let bindTaskEvents = function( taskListItem , checkBoxEventHandler ) {
 
-  let checkBox=taskListItem.querySelector("input[type=checkbox]");
-  let editButton=taskListItem.querySelector(".tasksBlock__list__item__editBtn");
-  let deleteButton=taskListItem.querySelector(".tasksBlock__list__item__delBtn");  
+  let checkBox = taskListItem.querySelector(".tasksBlock__list__item__checkbox");
+  let editButton = taskListItem.querySelector(".tasksBlock__list__item__editBtn");
+  let deleteButton = taskListItem.querySelector(".tasksBlock__list__item__delBtn");  
   
   editButton.onclick = editTask;
   deleteButton.onclick = deleteTask;
@@ -78,10 +79,10 @@ let bindTaskEvents = function( taskListItem , checkBoxEventHandler ) {
 
 let addTask = function( taskInput ) {
 
-  if (!taskInput.value) return;
+  if ( !taskInput.value ) return;
 
   let listItem = createNewTaskElement( taskInput.value );
-  incompleteTaskHolder.append( listItem );
+  incompleteTasks.append( listItem );
   bindTaskEvents( listItem, taskCompleted );
   taskInput.value = "";
 }
@@ -117,36 +118,30 @@ let deleteTask = function() {
 
 }
 
-let ajaxRequest = function() {
-  console.log("AJAX Request");
-}
-
 //Mark task completed
 let taskCompleted = function() {
   let listItem = this.parentNode;
-  completedTasksHolder.append( listItem );
+  completedTasks.append( listItem );
   bindTaskEvents( listItem, taskIncomplete );
 }
   
 let taskIncomplete = function() {
   let listItem = this.parentNode;
-  incompleteTaskHolder.appendChild( listItem );
+  incompleteTasks.appendChild( listItem );
   bindTaskEvents( listItem, taskCompleted );
 }
 
-let incTask = incompleteTaskHolder.children ;
+let incTask = incompleteTasks.children ;
 
 for (let i = 0; i < incTask.length ; i++){
   bindTaskEvents( incTask[i] , taskCompleted );
 }
 
-let compTask = completedTasksHolder.children ; 
+let compTask = completedTasks.children ; 
 
 for ( let i = 0; i < compTask.length; i++ ){
   bindTaskEvents( compTask[i] , taskIncomplete );
 }
 
-
   //Set the click handler to the addTask function.
 addButton.addEventListener("click",() => addTask( taskInput ));
-addButton.addEventListener("click",ajaxRequest);
